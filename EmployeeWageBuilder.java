@@ -13,10 +13,10 @@ class EmployeeWageBuilder
   	
    public void wageComputation()
    {
-   		empWage = empHrs * empRatePerHrs ;
-			totalWage += empWage;
-			totalWorkingHrs += empHrs;
-			System.out.println("Employee's day "+ totalWorkingDay +" Wage is : " + empWage);
+   	empWage = empHrs * empRatePerHrs ;
+		totalWage += empWage;
+		totalWorkingHrs += empHrs;
+		System.out.println("Employee's day "+ totalWorkingDay +" Wage is : " + empWage);
 	}
 
   	public void empWage()
@@ -47,7 +47,6 @@ class EmployeeWageBuilder
 		System.out.println("Total working Hours in month : " + totalWorkingHrs);
    	System.out.println("Total Monthly wages is :" + totalWage);
    }
-
 
    public static void main(String arg[])
    {
