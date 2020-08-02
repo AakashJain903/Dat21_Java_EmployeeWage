@@ -6,31 +6,34 @@ class EmployeeWageBuilder
 	int empHrs=0;
 	int empWage=0;
 
-   double empCheck = Math.floor(Math.random()*10) % 3;
+   int empCheck = (int) Math.floor(Math.random()*10) % 3;
 
 	public void empWage()
 	{
-		if (empCheck == isFullTime)
+		switch (empCheck)
 		{
-			System.out.println("Employee is full time");
-			empHrs=12;
-		}
-		else if (empCheck == isPartTime)
-		{
-			System.out.println("Employee is part time");
-			empHrs=4;
-		}
-		else
-		{
-			System.out.println("Employee is Absent");
-		}
-		empWage = empHrs*empRatePerHrs;
-		System.out.println("Employee wage : " + empWage);
+			case isFullTime :
+				System.out.println("Employee is full time working");
+				empHrs = 8;
+				break;
 
-	}
-	public static void main(String arg[])
-	{
-		EmployeeWageBuilder wage = new EmployeeWageBuilder();
-		wage.empWage();
-	}
+			case isPartTime :
+				System.out.println("Employee is part time working");
+				empHrs = 4;
+				break;
+
+			default :
+				System.out.println("Employee is Absent");
+				empHrs = 0;
+		}
+
+		empWage = empHrs * empRatePerHrs ;
+		System.out.println("Employee Wage : " + empWage);
+
+   }
+   public static void main(String arg[])
+   {
+      EmployeeWageBuilder wage = new EmployeeWageBuilder();
+      wage.empWage();
+   }
 }
